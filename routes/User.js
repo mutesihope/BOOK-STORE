@@ -5,7 +5,7 @@ const isSecure = require("../Middleware/studentAutho")
 
 router.get('/', UserController.index);
 router.get('/:userID', UserController.show);
-router.post('/create', UserController.store);
+router.post('/create/post', UserController.store);
 router.post('/login', UserController.userLogin);
 router.put('/:userID', UserController.update);
 router.delete('/:userID', UserController.destroy);
