@@ -2,6 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 const BookRoute = require("./routes/Book");
+const UserRoute = require("./routes/User")
 
 dotenv.config();
 
@@ -10,7 +11,7 @@ const app = express();
 app.use(express.json());
 
 app.use("/api/books", BookRoute);
-
+app.use("/api/User", UserRoute);
 const PORT = process.env.PORT || 3000;
 
 mongoose
@@ -26,3 +27,5 @@ mongoose
     .catch(function (err) {
         console.error("Error connecting to database:", err);
     });
+
+// REALTIME NOTIFICATION

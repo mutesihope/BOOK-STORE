@@ -1,11 +1,12 @@
 const express = require('express');
 const router = express.Router();
 const BookController = require('../controllers/BookController');
+const isSecure = require("../Middleware/AdminAutho")
 
-router.get('/', BookController.index);
-router.get('/:bookID', BookController.show); // Changed to GET request and added parameter for employeeID
-router.post('/store', BookController.store);
-router.put('/:bookID', BookController.update); // Changed to PUT request and added parameter for employeeID
-router.delete('/:bookID', BookController.destroy); // Changed to DELETE request and added parameter for employeeID
+router.get('/', isSecure, BookController.index);
+router.get('/:bookID', isSecure, BookController.show);
+router.post('/store', isSecure, BookController.store);
+router.put('/:bookID', isSecure, BookController.update);
+router.delete('/:bookID', isSecure, BookController.destroy);
 
 module.exports = router;

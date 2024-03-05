@@ -15,7 +15,7 @@ const index = (req, res, next) => {
         });
 };
 
-// function to show the details of a single employee by using book ID
+// function to show the details of a single book by using book ID
 const show = (req, res, next) => {
     let bookID = req.params.bookID;
     Book.findById(bookID)
@@ -58,7 +58,7 @@ const store = (req, res, next) => {
         });
 };
 
-// function to update a book in the database using employee ID
+// function to update a book in the database using book ID
 const update = (req, res, next) => {
     let bookID = req.params.bookID;
     let updatedData = {
@@ -88,7 +88,7 @@ const update = (req, res, next) => {
         });
 };
 
-// function to delete an employee from the database using employee ID
+// function to delete an employee from the database using book ID
 const destroy = (req, res, next) => {
     let bookID = req.params.bookID;
     Book.findOneAndDelete(bookID)
