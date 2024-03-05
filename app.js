@@ -2,7 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 const BookRoute = require("./routes/Book");
-const UserRoute = require("./routes/User")
+const UserRoute = require("./routes/User");
 
 dotenv.config();
 
